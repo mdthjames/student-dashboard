@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Student Dashboard</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <div class="container">
+    <h1>ระบบจัดการนักเรียน</h1>
+
+    <form id="studentForm">
+      <input type="text" id="studentId" placeholder="รหัสนักเรียน" required />
+      <input type="text" id="fullName" placeholder="ชื่อ-นามสกุล" required />
+      <input type="text" id="idCard" placeholder="เลขบัตรประชาชน" required />
+      <input type="text" id="grade" placeholder="ระดับชั้น เช่น ม.1" />
+      <input type="text" id="fatherName" placeholder="ชื่อบิดา" />
+      <input type="text" id="fatherPhone" placeholder="เบอร์โทรบิดา" />
+      <input type="text" id="motherName" placeholder="ชื่อมารดา" />
+      <input type="text" id="motherPhone" placeholder="เบอร์โทรมารดา" />
+      <input type="text" id="guardian" placeholder="ชื่อผู้ปกครอง (ถ้ามี)" />
+      <input type="text" id="guardianPhone" placeholder="เบอร์ผู้ปกครอง" />
+      <input type="text" id="address" placeholder="ที่อยู่" />
+      <button type="submit">บันทึกข้อมูล</button>
+    </form>
+
+    <h2>รายชื่อนักเรียน</h2>
+    <ul id="studentList"></ul>
+
+    <button onclick="exportToExcel()">📤 ดาวน์โหลด Excel</button>
+  </div>
+
+  <script src="https://www.gstatic.com/firebasejs/9.22.2/firebase-app-compat.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/9.22.2/firebase-database-compat.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/xlsx/0.18.5/xlsx.full.min.js"></script>
+  <script src="script.js"></script>
+</body>
+</html>
